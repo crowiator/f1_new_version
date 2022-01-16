@@ -1,12 +1,12 @@
 @include('layouts.app')
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
 <div class="container">
     <h1>Races</h1>
     <a href="javascript:void(0)" class="btn btn-secondary" id="createNewRace" style="float:right">Add Race</a>
-    <table class="table table-bordered data-table">
+    <table class="table table-bordered data-table table-responsive-sm">
         <thead>
         <tr>
             <th>No</th>
@@ -23,48 +23,52 @@
 
         </tbody>
     </table>
-</div>
-<div class="modal fade" id="ajaxModel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="modalHeading"></h4>
-            </div>
-            <div class="modal-body">
-                <form  id="raceForm" name="raceForm" class="form-horizontal">
-                    <input type="hidden" name="race_id" id="race_id">
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" value=""
-                               required>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput2" class="form-label">Place</label>
-                        <input type="text" class="form-control" id="place" name="place" placeholder="Enter place"
-                               value="" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput3" class="form-label">Circle</label>
-                        <input type="text" class="form-control" id="circle" name="circle" placeholder="Enter circle"
-                               value="" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput4" class="form-label">Date</label>
-                        <input type="date" class="form-control" id="date" name="date" placeholder="Enter date" value=""
-                               required>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput5" class="form-label">Time</label>
-                        <input type="time" class="form-control" id="time" name="time" placeholder="Enter time" value=""
-                               required>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput6" class="form-label">Winner</label>
-                        <input type="text" class="form-control" id="winner" name="winner" placeholder="Enter Winner"
-                               value="" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="saveBtn" value="create">Save</button>
-                </form>
+
+    <div class="modal fade" id="ajaxModel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modalHeading"></h4>
+                </div>
+                <div class="modal-body">
+                    <form id="raceForm" name="raceForm" class="form-horizontal">
+                        <input type="hidden" name="race_id" id="race_id">
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter name"
+                                   value=""
+                                   required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput2" class="form-label">Place</label>
+                            <input type="text" class="form-control" id="place" name="place" placeholder="Enter place"
+                                   value="" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput3" class="form-label">Circle</label>
+                            <input type="text" class="form-control" id="circle" name="circle" placeholder="Enter circle"
+                                   value="" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput4" class="form-label">Date</label>
+                            <input type="date" class="form-control" id="date" name="date" placeholder="Enter date"
+                                   value=""
+                                   required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput5" class="form-label">Time</label>
+                            <input type="time" class="form-control" id="time" name="time" placeholder="Enter time"
+                                   value=""
+                                   required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput6" class="form-label">Winner</label>
+                            <input type="text" class="form-control" id="winner" name="winner" placeholder="Enter Winner"
+                                   value="" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="saveBtn" value="create">Save</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -95,11 +99,11 @@
                 {data: 'date', name: 'date'},
                 {data: 'time', name: 'time'},
                 {data: 'winner', name: 'winner'},
-                {data: 'action', name: 'action',orderable: false,searchable: false},
+                {data: 'action', name: 'action', orderable: false, searchable: false},
             ]
         });
         //create new race
-        $("#createNewRace").click(function(){
+        $("#createNewRace").click(function () {
             $("#race_id").val('');
             $("#raceForm").trigger("reset");
             $("#modalHeading").html("Add Race");
@@ -111,7 +115,7 @@
             $(this).html('Save');
 
             $.ajax({
-                data:$("#raceForm").serialize(),
+                data: $("#raceForm").serialize(),
                 url: "{{ route('races.store') }}",
                 type: "POST",
                 dataType: 'json',
@@ -126,39 +130,41 @@
                 }
             });
         });
-        $('body').on('click','.deleteRace',function (){
-            var race_id =$(this).data("id");
-             confirm("Are you want to delete this race");
-             $.ajax({
-                 type:"DELETE",
-                 url:"{{ route('races.store') }}"+ '/' + race_id,
-                 success:function (data){
-                     table.draw();
-                 },
-                 error: function (data) {
-                     console.log('Error', data);
-                 }
-             })
+        $('body').on('click', '.deleteRace', function () {
+            var race_id = $(this).data("id");
+            confirm("Are you want to delete this race");
+            $.ajax({
+                type: "DELETE",
+                url: "{{ route('races.store') }}" + '/' + race_id,
+                success: function (data) {
+                    table.draw();
+                },
+                error: function (data) {
+                    console.log('Error', data);
+                }
+            })
         });
 
-        $('body').on('click','.editRace',function (){
-           var race_id=$(this).data('id');
-           $.get("{{route('races.index')}}" + "/"+race_id + "/edit",function (data) {
-               $("modalHeading").html("Edit Student");
-               $('#ajaxModel').modal('show');
-               $("#race_id").val(data.id);
-               $("#name").val(data.name);
-               $("#place").val(data.place);
-               $("#circle").val(data.circle);
-               $("#date").val(data.date);
-               $("#time").val(data.time);
-               $("#winner").val(data.winner);
-           });
+        $('body').on('click', '.editRace', function () {
+            var race_id = $(this).data('id');
+            $.get("{{route('races.index')}}" + "/" + race_id + "/edit", function (data) {
+                $("modalHeading").html("Edit Student");
+                $('#ajaxModel').modal('show');
+                $("#race_id").val(data.id);
+                $("#name").val(data.name);
+                $("#place").val(data.place);
+                $("#circle").val(data.circle);
+                $("#date").val(data.date);
+                $("#time").val(data.time);
+                $("#winner").val(data.winner);
+            });
         });
 
 
     });
 </script>
+
+
 
 
 

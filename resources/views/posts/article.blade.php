@@ -14,13 +14,19 @@
         <a href="/users/{{$post->user->id}}" class="author">
             <strong>Author: {{$post->user->name}}</strong>
         </a>
+        <!--  -->
 
-        <a href="/posts/{{$post->id}}#comments" class="comments">
-            {{$post->comments->count() }} <strong>{{str_plural('comment',$post->comments->count())}}</strong>
-        </a>
 
     </div>
 </article>
+
+
+
+
+
+
+
+
 
 
 

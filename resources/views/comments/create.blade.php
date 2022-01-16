@@ -10,3 +10,4 @@
     </div>
     <input type="hidden" name="post_id" value="{{$post->id}}">
 </form>
+

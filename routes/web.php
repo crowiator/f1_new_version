@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RaceController;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('races',RaceController::class);
+Route::resource('events', EventController::class);
 
 Auth::routes();
 

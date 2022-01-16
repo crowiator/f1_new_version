@@ -37,7 +37,7 @@ class CommentController extends Controller
         //
         $request->validate([
             'text'=> 'required',
-            'post_id' =>'required|integer|exists:posts,id'
+            'post_id' =>'required|integer'
         ]);
         //komentare pre prihlaseneho usera
         auth()->user()->comments()->create(
