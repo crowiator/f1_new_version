@@ -1,0 +1,21 @@
+a:hover{
+    color: black;
+    text-decoration: none;
+}
+.clanok:nth-child(2n) {
+    background-color: #ff4d4d;
+    color: white;
+}
+.clanok>h2{
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+article.post.listing {
+    padding: 0 0 0 0;
+}
+article.post.listing>h2 {
+    text-align: left;
+}
+

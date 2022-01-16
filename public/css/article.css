@@ -1,0 +1,31 @@
+a:hover{
+    color: black;
+    text-decoration: none;
+}
+a.title {
+    margin-top: 40px;
+    font-weight: bold;
+    color:#b30000 ;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+
+}
+harticle.post.full >h2{
+    text-align: center;
+}
+.post{
+    padding: 25px 50px 75px;
+}
+strong{
+    font-weight: bold;
+}
+.author{
+    padding-left:5em;
+    padding-right: 5em;
+
+}
+comments{
+
+}
+
+
