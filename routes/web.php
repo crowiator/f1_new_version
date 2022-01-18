@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RaceController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\StandingsPilotController;
+use App\Http\Controllers\StandingsConstructorController;
+use App\Http\Controllers\FileUpload;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +32,10 @@ Route::resource('events', EventController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('standings-pilots', StandingsPilotController::class);
+Route::resource('standings-constructors', StandingsConstructorController::class);
+
+Route::get('/image-upload', [FileUpload::class, 'createForm']);
+
+Route::post('/image-upload', [FileUpload::class, 'fileUpload'])->name('imageUpload');
+Route::get('/images', [FileUpload::class, 'index'])->name('index');
